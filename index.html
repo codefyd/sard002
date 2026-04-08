@@ -1631,10 +1631,10 @@ function getEffectiveSettings(student) {
   const tc = STATE.trackConfigs.find(t => t.name === student.track);
   const s = STATE.settings;
   return {
-    partsDivisions: tc && tc.partsDivisions ? Number(tc.partsDivisions) : Number(s.partsDivisions || 2),
-    mistakeDeduction: tc && tc.mistakeDeduction != null ? Number(tc.mistakeDeduction) : Number(s.mistakeDeduction || 0.5),
-    warningDeduction: tc && tc.warningDeduction != null ? Number(tc.warningDeduction) : Number(s.warningDeduction || 0.25),
-    passingScorePerSection: tc && tc.passingScorePerSection ? Number(tc.passingScorePerSection) : Number(s.passingScorePerSection || 7),
+    partsDivisions: tc && tc.partsDivisions ? Number(tc.partsDivisions) : Number(s.partsDivisions ?? 2),
+    mistakeDeduction: tc && tc.mistakeDeduction != null ? Number(tc.mistakeDeduction) : Number(s.mistakeDeduction ?? 0.5),
+    warningDeduction: tc && tc.warningDeduction != null ? Number(tc.warningDeduction) : Number(s.warningDeduction ?? 0.25),
+    passingScorePerSection: tc && tc.passingScorePerSection ? Number(tc.passingScorePerSection) : Number(s.passingScorePerSection ?? 7),
     requireFailReason: !!s.requireFailReason,
     editSectionsCode: s.editSectionsCode || '',
     showDeleteSectionButton: !!s.showDeleteSectionButton
