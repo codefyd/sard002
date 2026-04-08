@@ -1630,6 +1630,7 @@ function renderStudentHistory(student, rec, eff) {
 function getEffectiveSettings(student) {
   const tc = STATE.trackConfigs.find(t => t.name === student.track);
   const s = STATE.settings;
+  console.log('showDeleteSectionButton:', s.showDeleteSectionButton);
   return {
     partsDivisions: tc && tc.partsDivisions ? Number(tc.partsDivisions) : Number(s.partsDivisions ?? 2),
     mistakeDeduction: tc && tc.mistakeDeduction != null ? Number(tc.mistakeDeduction) : Number(s.mistakeDeduction ?? 0.5),
